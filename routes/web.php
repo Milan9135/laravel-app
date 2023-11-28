@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlanetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('about');
 });
+
+Route::get('/EersteRoute', function () {
+    return view('pages/EersteRoute');
+});
+
+
+Route::get('/planets1', function () {
+    return view("pages/Views");
+});
+
+Route::get('/planets2', function () {
+    return view("pages/Requests");
+});
+
+
+Route::get('/planets', [PlanetController::class, 'index']);
+
+Route::get('/planets/{planet}', [PlanetController::class, 'show']);
