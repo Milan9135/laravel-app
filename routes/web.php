@@ -22,12 +22,11 @@ Route::get('/EersteRoute', function () {
     return view('pages/EersteRoute');
 });
 
-
-Route::get('/planets1', function () {
+Route::get('/Views', function () {
     return view("pages/Views");
 });
 
-Route::get('/planets2', function () {
+Route::get('/Requests', function () {
     return view("pages/Requests");
 });
 
@@ -35,3 +34,5 @@ Route::get('/planets2', function () {
 Route::get('/planets', [PlanetController::class, 'index']);
 
 Route::get('/planets/{planet}', [PlanetController::class, 'show']);
+
+Route::get('/Migrations', [PlanetController::class, 'Migrations']);
