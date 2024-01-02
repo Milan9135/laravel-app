@@ -18,21 +18,7 @@ Route::get('/', function () {
     return view('about');
 });
 
-Route::get('/EersteRoute', function () {
-    return view('pages/EersteRoute');
-});
-
-Route::get('/Views', function () {
-    return view("pages/Views");
-});
-
-Route::get('/Requests', function () {
-    return view("pages/Requests");
-});
-
-
 Route::get('/planets', [PlanetController::class, 'index']);
 
 Route::get('/planets/{planet}', [PlanetController::class, 'show']);
 
-Route::get('/Migrations', [PlanetController::class, 'Migrations']);
