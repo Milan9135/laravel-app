@@ -1,6 +1,8 @@
 <?php
 
-    $planets = DB::select('select * from planets');
+    use App\Models\Planet;
+
+    $planets = Planet::all();
 
     if (isset($planet)) {
         $planet = ucfirst($planet);

@@ -18,7 +18,7 @@
     }
 </style>
 <body>
-    <a href="planets">Opdracht 6: De eerste Query |</a>
+    <a href="planets">Opdracht 7: Eloquent |</a>
 
 </body>
 </html>
