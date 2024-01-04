@@ -9,4 +9,15 @@ class Planet extends Model
 {
     use HasFactory;
     protected $table = "planets";
+
+    public function solar_systems() {
+        return $this->belongsTo(solar_system::class);
+    }
+
+    protected $fillable = [
+        'name',
+        'description',
+        'size_in_km',
+        'solar_system_id'
+    ];
 }

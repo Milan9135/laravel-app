@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -12,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        Schema::create('planets', function (Blueprint $table) {
+        Schema::create('solar_systems', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("description");
-            $table->integer("size_in_km");
-            $table->unsignedBigInteger("solar_system_id");
-            $table->foreign("solar_system_id")->references('id')->on('solar_systems');
+            $table->bigInteger("age_in_years");
         });
     }
 
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('planets');
+        Schema::dropIfExists('solar_systems');
     }
 };

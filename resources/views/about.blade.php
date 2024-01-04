@@ -18,7 +18,7 @@
     }
 </style>
 <body>
-    <a href="planets">Opdracht 7: Eloquent |</a>
+    <a href="planets">Eloquent relations |</a>
 
 </body>
 </html>
