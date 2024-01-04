@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Planet extends Model
 {
     use HasFactory;
     protected $table = "planets";
 
-    public function solar_systems() {
-        return $this->belongsTo(solar_system::class);
+    public function solarSystem(): BelongsTo
+    {
+        return $this->belongsTo(SolarSystem::class);
     }
 
     protected $fillable = [

@@ -1,31 +1,20 @@
 <?php
 
-    use App\Models\Planet;
-    use App\Models\solar_system;
+use App\Models\Planet;
+use App\Models\SolarSystem;
 
-    $planets = Planet::all();
+$planets = Planet::with('solarSystem')->get();
 
-    $solarsystems = solar_system::all();
+if (isset($planet)) {
+    $planet = ucfirst($planet);
+    $collection = collect($planets);
+    $planets = $collection->where('name', $planet);
+}
 
-    if (isset($planet)) {
-        $planet = ucfirst($planet);
-        $collection = collect($planets);
-        $planets = $collection->where('name', $planet);
-    }
-
-    $solarsystem = "no solar system found";
 ?>
 
 @foreach ($planets as $planet)
     <h2>{{ $planet->name }}</h2>
     <p>{{ $planet->description }}</p>
-    <?php
-        foreach($solarsystems as $solar) {
-            if ($solar->id = $planet->solar_system_id) {
-                $solarsystem = $solar->name;
-            }
-        }
-    ?>
-    <p>solar system: {{ $solarsystem }}</p>
+    <p>Solar system: {{ $planet->SolarSystem->name }}</p>
 @endforeach
-

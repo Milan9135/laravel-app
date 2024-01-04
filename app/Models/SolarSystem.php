@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class solar_system extends Model
+class SolarSystem extends Model
 {
     use HasFactory;
 
 
-    public function planets() {
+    public function planets() : HasMany {
         return $this->hasMany(Planet::class);
     }
 
