@@ -21,7 +21,7 @@
     <p>{{ $planet->description }}</p>
     <?php
         foreach($solarsystems as $solar) {
-            if ($solar->id = $planet->id) {
+            if ($solar->id = $planet->solar_system_id) {
                 $solarsystem = $solar->name;
             }
         }
